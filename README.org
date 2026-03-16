@@ -6,3 +6,117 @@
 
 libarcade is a header-only C++ interface library for
 [[https://epitech.eu][Epitech]]'s second-year Arcade project.
+
+[[./blob/arcade.png]]
+
+** Installing the library
+It is recommended you install the library as follows:
+#+begin_src
+project_directory/
+ |--> lib/
+       |--> libarcade/
+       |--> ... (other libraries)
+ |--> src/
+       |--> ... (src files / directories)
+ |--> ... (other files/directories)
+#+end_src
+
+#+begin_quote
+[!NOTE]
+Whilst this is file structure is recommended,
+you are free to do whatever you prefer; it's
+your project after all.
+#+end_quote
+
+To programmatically install your library,
+all you need to do is include the following
+commands in your ~Makefile~ or ~CMakeLists.txt~:
+#+begin_src sh
+rm -rf lib/libarcade/
+git clone 'git@github.com:Bard-Gaming/libarcade.git' lib/libarcade/
+make -C lib/libarcade/ no-repo
+#+end_src
+
+As well as adding the directory to your *include directories*
+using the ~-I~ compiler flag:
+#+begin_src
+-Ilib/libarcade/
+#+end_src
+
+For instance, you could add the following
+in a ~Makefile~:
+#+begin_src makefile
+LIB_DIR = lib
+LIB_ARCADE = $(LIB_DIR)/libarcade
+
+CFLAGS += -I$(LIB_ARCADE)
+
+$(LIB_ARCADE):
+	@printf "\033[32m%s\033[0m\n" "installing libarcade..."
+	@rm -rf $(LIB_ARCADE)
+	@git clone 'git@github.com:Bard-Gaming/libarcade.git' $(LIB_ARCADE)
+	@make -C $(LIB_ARCADE) no-repo
+	@printf "\033[32m%s\033[0m\n" "successfully installed libarcade"
+#+end_src
+
+#+begin_quote
+[!IMPORTANT]
+If you choose a file structure different from the one described
+above, don't forget to modify the paths (namely ~lib/arcade/~)
+in the aforementioned commands.
+#+end_quote
+
+If everything was set up properly, you should be able to use
+the library in your project:
+#+begin_src cpp
+#include <Arcade.hpp>
+
+/**
+ * Program entry
+ */
+int main()
+{
+    Arcade::IDisplay& display = getDisplay();
+    ...
+}
+#+end_src
+
+** Library structure
+The library is structured as follows:
+#+begin_src
+lib_root/
+ |--> Arcade.hpp  (utility header file that contains everything)
+ |--> Arcade
+       |--> display.hpp  (for everything related to displays)
+       |--> game.hpp     (for everything related to games)
+       |--> utils.hpp    (general implementation utilities)
+#+end_src
+
+#+begin_quote
+[!NOTE]
+The library may add or remove header
+files from the ~Arcade/~ directory.
+
+However, the headers shown above will
+*never* be removed, so you may use
+the all throughout your project without
+having to worry about future incompatibilities.
+#+end_quote
+
+** Contributing
+Contributions are done through [[https://github.com/Bard-Gaming/libarcade/pulls][Pull Requests]].
+The title of the pull requests should (preferably) be
+[[https://www.conventionalcommits.org/en/v1.0.0/][Conventional Commits]]-compliant. If they aren't, they
+will most likely modified to be.
+
+Contributions are first merged into the ~unstable~ branch
+until a full release is done. If you depend on your contribution
+to continue work, please add the ~important~ label to your
+pull request.
+
+If you wish to stay up-to-date with the latest additions,
+you may stay on the ~unstable~ branch, but this isn't recommended,
+as it may break your project during active development
+(features might get added, then removed on a subsequent patch;
+generally speaking you should consider everything from the
+~unstable~ branch as a volatile mess).
