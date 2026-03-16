@@ -4,7 +4,7 @@
 
 #+HTML: <img src="https://img.shields.io/badge/Release-v0.0.1-brightgreen">
 
-libarcade is a header-only C++ interface library for
+libarcade is a header-only C++20 interface library for
 [[https://epitech.eu][Epitech]]'s second-year Arcade project.
 
 #+HTML: <p align="center"><img src="blob/arcade.png" /></p>
