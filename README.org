@@ -7,7 +7,7 @@
 libarcade is a header-only C++ interface library for
 [[https://epitech.eu][Epitech]]'s second-year Arcade project.
 
-[[./blob/arcade.png]]
+#+HTML: <p align="center"><img src="blob/arcade.png" /></p>
 
 ** Installing the library
 It is recommended you install the library as follows:
