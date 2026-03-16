@@ -109,6 +109,10 @@ The title of the pull requests should (preferably) be
 [[https://www.conventionalcommits.org/en/v1.0.0/][Conventional Commits]]-compliant. If they aren't, they
 will most likely modified to be.
 
+Branches should follow the same idea: if you're working
+on the addition of a new utility, you should name your
+branch something along the lines of ~feat/my-new-util~.
+
 Contributions are first merged into the ~unstable~ branch
 until a full release is done. If you depend on your contribution
 to continue work, please add the ~important~ label to your
