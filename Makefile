@@ -19,6 +19,5 @@ TO_REMOVE = .git/		\
 all:
 
 no-repo:
-	@printf "\033[31m%s\033[0m\n" "removing $(NAME) repository..."
 	@rm -rf $(TO_REMOVE)
-	@printf "\033[31m%s\033[0m\n" "removed $(NAME) repository"
+	@printf "\033[32m%s\033[0m\n" "cleaned up $(NAME)"

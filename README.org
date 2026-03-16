@@ -51,7 +51,7 @@ LIB_ARCADE = $(LIB_DIR)/libarcade
 
 CFLAGS += -I$(LIB_ARCADE)
 
-$(LIB_ARCADE):
+$(LIB_ARCADE)/Arcade.hpp:
 	@printf "\033[32m%s\033[0m\n" "installing libarcade..."
 	@rm -rf $(LIB_ARCADE)
 	@git clone 'git@github.com:Bard-Gaming/libarcade.git' $(LIB_ARCADE)
