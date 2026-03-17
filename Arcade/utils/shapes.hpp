@@ -9,7 +9,8 @@
 
 #pragma once
 
-#include "utils.hpp"
+#include "colors.hpp"
+#include "types.hpp"
 
 
 namespace Arcade::Shapes {
@@ -25,13 +26,13 @@ namespace Arcade::Shapes {
      * cell size.
      */
     struct Point {
-        Coordinate x;
-        Coordinate y;
+        Types::Coordinate x;
+        Types::Coordinate y;
         Color color;
 
         constexpr Point() noexcept : Point(0, 0) {}
 
-        constexpr Point(Coordinate x, Coordinate y, Color color = 0x0) noexcept
+        constexpr Point(Types::Coordinate x, Types::Coordinate y, Color color = 0x0) noexcept
             : x(x), y(y)
             , color(color)
         {}
@@ -51,15 +52,19 @@ namespace Arcade::Shapes {
      * same thing as a Point.
      */
     struct Rectangle {
-        Coordinate x;
-        Coordinate y;
-        Distance width;
-        Distance height;
+        Types::Coordinate x;
+        Types::Coordinate y;
+        Types::Distance width;
+        Types::Distance height;
         Color color;
 
         constexpr Rectangle() noexcept : Rectangle(0, 0, 0, 0) {}
 
-        constexpr Rectangle(Coordinate x, Coordinate y, Distance w, Distance h, Color c = 0x0) noexcept
+        constexpr Rectangle(
+            Types::Coordinate x, Types::Coordinate y,
+            Types::Distance w, Types::Distance h,
+            Color c = 0x0
+        ) noexcept
             : x(x), y(y)
             , width(w), height(h)
             , color(c)
