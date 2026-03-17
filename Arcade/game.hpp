@@ -106,5 +106,30 @@ namespace Arcade {
              * game on.
              */
             virtual void render(IDisplay& display) = 0;
+
+
+            ////////////////////////////////////////////////////
+            //                                                //
+            //                    Game Info                   //
+            //                                                //
+            ////////////////////////////////////////////////////
+
+            /**
+             * Retrieves the implemented game's title.
+             * The title shan't be empty, and contain
+             * at least a single (printable) character.
+             *
+             * Note:
+             * Returning a std::string will inevitably
+             * return in errors and undefined behaviour.
+             *
+             * This function is intended to return a literal
+             * string, such as:
+             *
+             * ```
+             * std::string_view gameTitle() const noexcept override { return "Minecraft"; }
+             * ```
+             */
+            virtual std::string_view gameTitle() const noexcept;
     };
 }
