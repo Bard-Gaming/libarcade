@@ -14,6 +14,7 @@
 
 namespace Arcade {
     class IDisplay;
+    enum class Event;
 
     class IGame {
         public:
@@ -67,6 +68,20 @@ namespace Arcade {
             //                  Game Runtime                  //
             //                                                //
             ////////////////////////////////////////////////////
+
+            /**
+             * Handles a user-initiated event.
+             *
+             * This function should do nothing
+             * if the given event is to be ignored.
+             *
+             * Parameters:
+             * - `evt`: the event to be handled.
+             * The event should never be equal
+             * to Event::COUNT, as it's not meant
+             * to represent a valid user event.
+             */
+            virtual void handleEvent(Event evt) = 0;
 
             /**
              * Updates the game's state by a single tick.
