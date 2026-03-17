@@ -9,9 +9,16 @@
 
 #pragma once
 
+#include <optional>
+
 
 namespace Arcade {
+    enum class Event;
+
     class IDisplay {
-        virtual ~IDisplay() = default;
+        public:
+            virtual ~IDisplay() = default;
+
+            virtual std::optional<Event> pollEvent();
     };
 }
