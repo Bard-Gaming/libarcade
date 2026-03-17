@@ -67,20 +67,22 @@ namespace Arcade {
         std::uint8_t blue;
         std::uint8_t alpha;
 
-        constexpr Color(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a = 0xff)
+        constexpr Color(std::uint8_t r, std::uint8_t g, std::uint8_t b, std::uint8_t a = 0xff) noexcept
             : red(r)
             , green(g)
             , blue(b)
             , alpha(a)
         {}
 
-        constexpr Color(std::uint32_t color)
+        constexpr Color(std::uint32_t color) noexcept
             : red   ((color & 0xff000000) >> 24)
             , green ((color & 0x00ff0000) >> 16)
             , blue  ((color & 0x0000ff00) >>  8)
             , alpha ((color & 0x000000ff) >>  0)
         {}
 
-        constexpr Color() : Color{ 0, 0, 0, 0 } {};
+        constexpr Color() noexcept : Color{ 0, 0, 0, 0 } {};
+
+        inline std::uint32_t toRGB() const noexcept { return *reinterpret_cast<const std::uint32_t*>(this); }
     };
 }
