@@ -14,6 +14,7 @@
 
 namespace Arcade {
     class IDisplay;
+    enum class Event;
 
     class IGame {
         public:
@@ -69,6 +70,20 @@ namespace Arcade {
             ////////////////////////////////////////////////////
 
             /**
+             * Handles a user-initiated event.
+             *
+             * This function should do nothing
+             * if the given event is to be ignored.
+             *
+             * Parameters:
+             * - `evt`: the event to be handled.
+             * The event should never be equal
+             * to Event::COUNT, as it's not meant
+             * to represent a valid user event.
+             */
+            virtual void handleEvent(Event evt) = 0;
+
+            /**
              * Updates the game's state by a single tick.
              *
              * Parameters:
@@ -91,5 +106,30 @@ namespace Arcade {
              * game on.
              */
             virtual void render(IDisplay& display) = 0;
+
+
+            ////////////////////////////////////////////////////
+            //                                                //
+            //                    Game Info                   //
+            //                                                //
+            ////////////////////////////////////////////////////
+
+            /**
+             * Retrieves the implemented game's title.
+             * The title shan't be empty, and contain
+             * at least a single (printable) character.
+             *
+             * Note:
+             * Returning a std::string will inevitably
+             * return in errors and undefined behaviour.
+             *
+             * This function is intended to return a literal
+             * string, such as:
+             *
+             * ```
+             * std::string_view gameTitle() const noexcept override { return "Minecraft"; }
+             * ```
+             */
+            virtual std::string_view gameTitle() const noexcept;
     };
 }
