@@ -91,7 +91,7 @@ us convert any coordinate from our display window's
 native coordinate system to libarcade's coordinate
 system:
 
-$$
+#+begin_src math
 \begin{alignat*}{2}
 cell_{w}(x)
   &: R_{wscreen} \mapsto [\![ 0; C_{wcount} ]\!]
@@ -100,4 +100,4 @@ cell_{h}(y)
   &: R_{hscreen} \mapsto [\![ 0; C_{hcount} ]\!]
   &&= floor \left( norm_{h}(y) \times C_{hcount} \right)
 \end{alignat*}
-$$
+#+end_src
