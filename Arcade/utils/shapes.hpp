@@ -26,13 +26,13 @@ namespace Arcade::Shapes {
      * cell size.
      */
     struct Point {
-        Types::Coordinate x;
-        Types::Coordinate y;
+        Coordinate x;
+        Coordinate y;
         Color color;
 
         constexpr Point() noexcept : Point(0, 0) {}
 
-        constexpr Point(Types::Coordinate x, Types::Coordinate y, Color color = 0x0) noexcept
+        constexpr Point(Coordinate x, Coordinate y, Color color = 0x0) noexcept
             : x(x), y(y)
             , color(color)
         {}
@@ -52,17 +52,17 @@ namespace Arcade::Shapes {
      * same thing as a Point.
      */
     struct Rectangle {
-        Types::Coordinate x;
-        Types::Coordinate y;
-        Types::Distance width;
-        Types::Distance height;
+        Coordinate x;
+        Coordinate y;
+        Distance width;
+        Distance height;
         Color color;
 
         constexpr Rectangle() noexcept : Rectangle(0, 0, 0, 0) {}
 
         constexpr Rectangle(
-            Types::Coordinate x, Types::Coordinate y,
-            Types::Distance w, Types::Distance h,
+            Coordinate x, Coordinate y,
+            Distance w, Distance h,
             Color c = 0x0
         ) noexcept
             : x(x), y(y)

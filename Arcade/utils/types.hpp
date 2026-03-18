@@ -11,7 +11,9 @@
 #include <cstdint>
 
 
-namespace Arcade::Types {
-    using Coordinate = std::int_fast16_t;
-    using Distance = std::uint_fast16_t;   // a distance can't be negative
+namespace Arcade {
+    inline namespace Types {
+        using Coordinate = std::int_fast16_t;
+        using Distance = std::uint_fast16_t;   // a distance can't be negative
+    }
 }
