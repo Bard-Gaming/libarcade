@@ -1,6 +1,7 @@
 #+title: libarcade Coordinates
 #+author: Christophe DRONNE
 #+date: Wed Mar 18 09:39:49 2026
+#+options: tex:t
 
 In order to ensure that everything gets rendered the
 same way regardless of the display that was used to
