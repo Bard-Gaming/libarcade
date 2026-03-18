@@ -105,6 +105,16 @@ namespace Arcade {
             ////////////////////////////////////////////////////
 
             /**
+             * Retrieves the display window's size
+             * in cell distance.
+             *
+             * For instance, on a 1920x1080 window
+             * with a cell size of 10x20, this function
+             * would return { 1920 / 10, 1080 / 20 }.
+             */
+            virtual std::pair<Coordinate, Coordinate> size() const noexcept = 0;
+
+            /**
              * Retrieves the name of the graphics
              * library the IDisplay implementation
              * uses. The name should be user-friendly
