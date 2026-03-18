@@ -11,6 +11,7 @@
 
 #include "utils/shapes.hpp"
 #include "utils/events.hpp"
+#include "utils/text.hpp"
 #include <string_view>
 #include <optional>
 
@@ -73,14 +74,20 @@ namespace Arcade {
              * the display's internal
              * window.
              */
-            virtual void draw(Shapes::Point point) = 0;
+            virtual void draw(const Shapes::Point& point) = 0;
 
             /**
              * Draws the rectangle onto
              * the display's internal
              * window.
              */
-            virtual void draw(Shapes::Rectangle rect) = 0;
+            virtual void draw(const Shapes::Rectangle& rect) = 0;
+
+            /**
+             * Draws the given text onto
+             * the display's internal window.
+             */
+            virtual void draw(const Text& text) = 0;
 
 
             ////////////////////////////////////////////////////
