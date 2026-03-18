@@ -85,11 +85,11 @@ simplify our conversion.
 
 #+begin_src math
 \begin{alignat*}{2}
-norm_{w}(x)
-  &: R_{wscreen} \mapsto \left[ 0; 1 \right[
+norm_{w}(x):
+  &R_{wscreen} \mapsto \left[ 0; 1 \right[
   &&= \frac{x - B_{wl}}{B_{wu} - B_{wl}} \\
-norm_{h}(y)
-  &: R_{hscreen} \mapsto \left[ 0; 1 \right[
+norm_{h}(y):
+  &R_{hscreen} \mapsto \left[ 0; 1 \right[
   &&= \frac{y - B_{wl}}{B_{hu} - B_{hl}}
 \end{alignat*}
 #+end_src
@@ -101,11 +101,11 @@ system:
 
 #+begin_src math
 \begin{alignat*}{2}
-cell_{w}(x)
-  &: R_{wscreen} \mapsto [\![ 0; C_{wcount} ]\!]
+cell_{w}(x):
+  &R_{wscreen} \mapsto [\![ 0; C_{wcount} ]\!]
   &&= floor \left( norm_{w}(x) \times C_{wcount} \right) \\
-cell_{h}(y)
-  &: R_{hscreen} \mapsto [\![ 0; C_{hcount} ]\!]
+cell_{h}(y):
+  &R_{hscreen} \mapsto [\![ 0; C_{hcount} ]\!]
   &&= floor \left( norm_{h}(y) \times C_{hcount} \right)
 \end{alignat*}
 #+end_src
