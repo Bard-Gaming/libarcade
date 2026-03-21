@@ -41,8 +41,9 @@ namespace Arcade {
         KEY_ESC,
 
         // mouse evts
-        MOUSE_LEFT_CLICK,
         MOUSE_RIGHT_CLICK,
+        MOUSE_LEFT_CLICK,
+        MOUSE_MOVE,
 
         // control evts
         RESIZE,
