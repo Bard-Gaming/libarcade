@@ -47,6 +47,13 @@ namespace Arcade {
              */
             virtual void close() noexcept = 0;
 
+            /**
+             * Determines if the display's
+             * window is currently open
+             * or not.
+             */
+            virtual bool isOpen() const noexcept = 0;
+
 
             ////////////////////////////////////////////////////
             //                                                //
