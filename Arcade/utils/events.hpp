@@ -40,6 +40,10 @@ namespace Arcade {
         KEY_TAB,
         KEY_ESC,
 
+        // mouse evts
+        MOUSE_LEFT_CLICK,
+        MOUSE_RIGHT_CLICK,
+
         // control evts
         RESIZE,
         CLOSE,
