@@ -9,6 +9,7 @@
 NAME = libarcade
 
 TO_REMOVE = .git/		\
+			docs/ 		\
 			blob/		\
 			LICENSE		\
 			README.org	\
