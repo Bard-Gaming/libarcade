@@ -130,6 +130,6 @@ namespace Arcade {
              * std::string_view gameTitle() const noexcept override { return "Minecraft"; }
              * ```
              */
-            virtual std::string_view gameTitle() const noexcept;
+            virtual std::string_view gameTitle() const noexcept = 0;
     };
 }
