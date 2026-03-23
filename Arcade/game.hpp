@@ -80,8 +80,23 @@ namespace Arcade {
              * The event should never be equal
              * to Event::COUNT, as it's not meant
              * to represent a valid user event.
+             * - `display`: the display the
+             * event originates from. This
+             * parameter is given to gather
+             * additional information on the
+             * event, or to perform some display-
+             * specific actions (such as closing
+             * the window).
+             *
+             * Note:
+             * Whilst the `display` parameter is
+             * given to this member function, you
+             * should, under no circumstances,
+             * call IDisplay::pollEvent() in this
+             * function. Polling for events should
+             * ONLY be done by the Core.
              */
-            virtual void handleEvent(Event evt) = 0;
+            virtual void handleEvent(Event evt, IDisplay& display) = 0;
 
             /**
              * Updates the game's state by a single tick.

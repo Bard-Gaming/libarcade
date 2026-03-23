@@ -111,6 +111,19 @@ namespace Arcade {
              */
             virtual std::optional<Event> pollEvent() = 0;
 
+            /**
+             * Retrieves the coordinates of the mouse
+             * on the display's window.
+             *
+             * Note:
+             * This function should *only* be called if
+             * a mouse event was received.
+             * The reason for this is that, depending on
+             * the display, the mouse coordinates may only
+             * be updated when a mouse-related event occurs
+             * (as with the NCurses library).
+             */
+            virtual std::pair<Coordinate, Coordinate> mousePosition() const = 0;
 
             ////////////////////////////////////////////////////
             //                                                //
