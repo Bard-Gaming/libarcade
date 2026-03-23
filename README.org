@@ -117,6 +117,26 @@ to wrap your entrypoint in an ~extern "C"~
 block. This is required.
 #+end_quote
 
+*** Loading libraries
+The point of standardising these entrypoints is
+to be able to invoke them using ~libdl~.
+
+When doing so, you *may* use the types defined
+in ~libarcade~, but this is not a requirement.
+
+Example:
+#+begin_src cpp
+Arcade::GameEntryPointFnc fnc = dlsym(...);
+Arcade::IGame* game = fnc();
+#+end_src
+
+#+begin_quote
+[!NOTE]
+The code shared above will not work as-is.
+The purpose of the example is to show the
+overall steps one might take in order to
+tap into a library's entrypoint.
+#+end_quote
 
 ** Library structure
 The library is structured as follows:
