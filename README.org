@@ -76,7 +76,7 @@ the library in your project:
  */
 int main()
 {
-    Arcade::IDisplay& display = getDisplay();
+    Arcade::IDisplay* display = get_display();
     ...
 }
 #+end_src
@@ -94,10 +94,7 @@ without having to rely on the name of your library.
 Display libraries *must* prototype their entrypoints as
 follows:
 #+begin_src cpp
-Arcade::IDisplay* get_display()
-{
-    ...
-}
+Arcade::IDisplay* get_display();
 #+end_src
 
 #+begin_quote
@@ -110,10 +107,7 @@ in an ~extern "C"~ block. This is required.
 Display libraries *must* prototype their entrypoints as
 follows:
 #+begin_src cpp
-Arcade::IGame* get_game()
-{
-    ...
-}
+Arcade::IGame* get_game();
 #+end_src
 
 #+begin_quote
