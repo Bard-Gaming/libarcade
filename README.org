@@ -76,10 +76,69 @@ the library in your project:
  */
 int main()
 {
-    Arcade::IDisplay& display = getDisplay();
+    Arcade::IDisplay* display = get_display();
     ...
 }
 #+end_src
+
+** Shared library entrypoints
+If you wish to make a shared library using ~libarcade~,
+you *must* define one of the following entrypoints.
+
+The rationale between having two different names for
+the entrypoints is to be able to identify whether
+your library is a display library or a game library,
+without having to rely on the name of your library.
+
+*** Display libraries
+Display libraries *must* prototype their entrypoints as
+follows:
+#+begin_src cpp
+Arcade::IDisplay* get_display();
+#+end_src
+
+#+begin_quote
+[!IMPORTANT]
+Don't forget to wrap your entrypoint
+in an ~extern "C"~ block. This is required.
+#+end_quote
+
+*** Game libraries
+Display libraries *must* prototype their entrypoints as
+follows:
+#+begin_src cpp
+Arcade::IGame* get_game();
+#+end_src
+
+#+begin_quote
+[!IMPORTANT]
+As with display libraries, don't forget
+to wrap your entrypoint in an ~extern "C"~
+block. This is required.
+#+end_quote
+
+*** Loading libraries
+The point of standardising these entrypoints is
+to be able to invoke them using ~libdl~.
+
+When doing so, you *may* use the types defined
+in ~libarcade~, but this is not a requirement.
+
+Example:
+#+begin_src cpp
+#include <Arcade/utils.hpp>  // for GameEntryPointFnc type
+
+Arcade::GameEntryPointFnc fnc = dlsym(...);
+Arcade::IGame* game = fnc();
+#+end_src
+
+#+begin_quote
+[!NOTE]
+The code shared above will not work as-is.
+The purpose of the example is to show the
+overall steps one might take in order to
+tap into a library's entrypoint.
+#+end_quote
 
 ** Library structure
 The library is structured as follows:
