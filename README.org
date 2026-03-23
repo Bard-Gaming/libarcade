@@ -104,7 +104,7 @@ in an ~extern "C"~ block. This is required.
 #+end_quote
 
 *** Game libraries
-Display libraries *must* prototype their entrypoints as
+Game libraries *must* prototype their entrypoints as
 follows:
 #+begin_src cpp
 Arcade::IGame* get_game();
