@@ -2,7 +2,7 @@
 #+author: Christophe DRONNE
 #+date: Mon Mar 16 09:46:57 2026
 
-#+HTML: <img src="https://img.shields.io/badge/Release-v0.0.1-brightgreen">
+#+HTML: <img src="https://img.shields.io/badge/Release-v1.0.0-brightgreen">
 
 libarcade is a header-only C++20 interface library for
 [[https://epitech.eu][Epitech]]'s second-year Arcade project.
