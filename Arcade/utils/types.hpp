@@ -12,8 +12,15 @@
 
 
 namespace Arcade {
+    class IGame;
+    class IDisplay;
+
     inline namespace Types {
         using Coordinate = std::int_fast16_t;
         using Distance = std::uint_fast16_t;   // a distance can't be negative
+
+        // Entry points
+        using GameEntryPointFnc = IGame*(*)();
+        using DisplayEntryPointFnc = IDisplay*(*)();
     }
 }
