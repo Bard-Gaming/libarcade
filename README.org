@@ -126,6 +126,8 @@ in ~libarcade~, but this is not a requirement.
 
 Example:
 #+begin_src cpp
+#include <Arcade/utils.hpp>  // for GameEntryPointFnc type
+
 Arcade::GameEntryPointFnc fnc = dlsym(...);
 Arcade::IGame* game = fnc();
 #+end_src
