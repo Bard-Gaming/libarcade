@@ -174,8 +174,8 @@ branch something along the lines of ~feat/my-new-util~.
 
 #+begin_quote
 [!IMPORTANT]
-Branches that don't start with ~feat/~, ~fix/~,
-or ~docs/~ can't be pushed to the repository.
+Branches that don't start with ~feat/~, ~fix/~, ~docs/~, ~refactor/~,
+etc... can't be pushed to the repository.
 #+end_quote
 
 Contributions are first merged into the ~unstable~ branch
