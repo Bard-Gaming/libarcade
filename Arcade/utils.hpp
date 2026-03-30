@@ -10,5 +10,6 @@
 
 #include "utils/colors.hpp"
 #include "utils/events.hpp"
+#include "utils/player.hpp"
 #include "utils/shapes.hpp"
 #include "utils/types.hpp"
