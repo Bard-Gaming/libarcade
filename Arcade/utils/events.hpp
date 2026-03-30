@@ -42,6 +42,12 @@ namespace Arcade {
             ARC_KEY_F6, ARC_KEY_F7, ARC_KEY_F8, ARC_KEY_F9, ARC_KEY_F10,
             ARC_KEY_F11, ARC_KEY_F12,
 
+            // arrow keys
+            ARC_ARROW_UP,
+            ARC_ARROW_DOWN,
+            ARC_ARROW_LEFT,
+            ARC_ARROW_RIGHT,
+
             // control keys
             ARC_KEY_BACKSPACE,
             ARC_KEY_RETURN,
