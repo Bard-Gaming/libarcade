@@ -10,11 +10,11 @@
 #pragma once
 
 #include <chrono>
+#include "utils/events.hpp"
 
 
 namespace Arcade {
     class IDisplay;
-    enum class Event;
     struct Player;
 
     class IGame {
@@ -97,7 +97,7 @@ namespace Arcade {
              * function. Polling for events should
              * ONLY be done by the Core.
              */
-            virtual void handleEvent(Event evt, IDisplay& display) = 0;
+            virtual void handleEvent(Events::Event evt, IDisplay& display) = 0;
 
             /**
              * Updates the game's state by a single tick.
