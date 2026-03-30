@@ -15,6 +15,7 @@
 namespace Arcade {
     class IDisplay;
     enum class Event;
+    struct Player;
 
     class IGame {
         public:
@@ -110,7 +111,7 @@ namespace Arcade {
              * std::chrono::steady_clock::now(), as it's made
              * precisly for this purpose.
              */
-            virtual void update(std::chrono::nanoseconds dt) = 0;
+            virtual void update(std::chrono::nanoseconds dt, Player& player) = 0;
 
             /**
              * Renders the game's current frame on the
