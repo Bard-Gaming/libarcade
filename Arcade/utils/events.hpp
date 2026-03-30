@@ -37,6 +37,11 @@ namespace Arcade {
             ARC_KEY_1, ARC_KEY_2, ARC_KEY_3, ARC_KEY_4, ARC_KEY_5, ARC_KEY_6,
             ARC_KEY_7, ARC_KEY_8, ARC_KEY_9, ARC_KEY_0,
 
+            // function keys
+            ARC_KEY_F1, ARC_KEY_F2, ARC_KEY_F3, ARC_KEY_F4, ARC_KEY_F5,
+            ARC_KEY_F6, ARC_KEY_F7, ARC_KEY_F8, ARC_KEY_F9, ARC_KEY_F10,
+            ARC_KEY_F11, ARC_KEY_F12,
+
             // control keys
             ARC_KEY_BACKSPACE,
             ARC_KEY_RETURN,
